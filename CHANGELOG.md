@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/le-phare/ansible-db-pull/compare/v1.1.0...v1.2.0) (2022-11-07)
+
+
+### Features
+
+* **dump:** add db_pull_excluded_tables ([0c65cb4](https://github.com/le-phare/ansible-db-pull/commit/0c65cb4676148f6f028e83a4b0d4329c4adb85d6))
+
+
 ## 1.1.0 (2021-11-18)
 
 
