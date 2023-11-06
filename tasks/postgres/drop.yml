@@ -6,3 +6,4 @@
       -U {{ db_pull_local_database_user }} \
       -h {{ db_pull_local_database_host }} \
       {{ db_pull_local_database_name }}
+  when: not db_pull_skip_restore
