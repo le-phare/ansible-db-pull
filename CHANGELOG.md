@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.1](https://github.com/le-phare/ansible-db-pull/compare/v1.2.0...v1.2.1) (2023-11-06)
+
+
+### Fixes
+
+* **dump:** drop task skipped if `db_pull_skip_restore` set to `true` ([87ce3763ffdb0579fadd083afd9d6f145804101a](https://github.com/le-phare/ansible-db-pull/commit/87ce3763ffdb0579fadd083afd9d6f145804101a))
+
+
 ## [1.2.0](https://github.com/le-phare/ansible-db-pull/compare/v1.1.0...v1.2.0) (2022-11-07)
 
 
