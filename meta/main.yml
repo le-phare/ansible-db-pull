@@ -2,11 +2,11 @@ galaxy_info:
   author: Erwan Richard
   description: One way sync between remote and local databases
   company: Le Phare
-  issue_tracker_url: https://github.com/erichard/ansible-database-sync
+  issue_tracker_url: https://github.com/le-phare/ansible-db-pull/issues
 
   license: MIT
 
-  min_ansible_version: 1.2
+  min_ansible_version: "1.2"
 
   galaxy_tags:
     - database
