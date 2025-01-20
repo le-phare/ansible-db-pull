@@ -28,3 +28,19 @@ db_pull_postgresql_createdb_binary_path: createdb
 db_pull_postgresql_dropdb_binary_path: dropdb
 db_pull_postgresql_pg_dump_binary_path: pg_dump
 db_pull_postgresql_pg_restore_binary_path: pg_restore
+
+db_pull_anonymization: false
+
+db_pull_anonymization_remote_database_user: postgres
+db_pull_anonymization_remote_database_host: localhost
+db_pull_anonymization_remote_database_name: anonymization
+db_pull_anonymization_remote_database_password: root
+db_pull_anonymization_remote_database_port: 5432
+
+db_pull_anonymization_remote_database_url: "postgresql://{{ db_pull_anonymization_remote_database_user }}:{{ db_pull_anonymization_remote_database_password }}@{{ db_pull_anonymization_remote_database_host }}:{{ db_pull_anonymization_remote_database_port }}/{{ db_pull_anonymization_remote_database_name }}?serverVersion=17"
+
+db_pull_anonymization_command: >-
+  chdir={{ ansistrano_deploy_to }}/current
+  DATABASE_URL="{{ db_pull_anonymization_remote_database_url }}"
+  APP_ENV={{ symfony_env }}
+  php bin/console db-tools:anonymize -n --local-database {{ db_pull_remote_backup_path }}/{{ db_pull_remote_database_name }}-{{ ansible_date_time.iso8601 }}.dump
