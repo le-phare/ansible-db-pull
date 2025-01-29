@@ -15,6 +15,10 @@
 - include_tasks: "{{ db_pull_database_type }}/dump.yml"
   when: local_dump.matched == 0
 
+- name: Anonymize using DbToolsBundle
+  shell: {{ db_pull_anonymization_command }}
+  when: db_pull_anonymization
+
 - name: Ensure database dump folder exists
   delegate_to: localhost
   become: false
