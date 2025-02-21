@@ -6,37 +6,20 @@ Sync local PostgreSQL or MySQL database with remote.
 Requirements
 ------------
 
-The local system need to have either `pg_dump` and `pg_reload` command or `mysql` and `mysqldump`.
+The following CLI commands need to be installed on your local system / Docker image:
+
+- PostgreSQL: `createdb`, `dropdb`, `pg_restore`
+- MySQL: `mysql`
+
+The following CLI commands need to be installed on your Ansible managed node / host system:
+
+- PostgreSQL: `pg_dump`
+- MySQL: `mysqldump`
 
 Role Variables
 --------------
 
-The `defaults` vars declared in this module:
-
-```
-db_pull_remote_backup_path: /tmp/db-pull
-db_pull_local_backup_path: /tmp/db-pull
-db_pull_keep_backup: 5
-
-db_pull_remote_database_user: postgres
-db_pull_remote_database_host: localhost
-db_pull_remote_database_name: postgres
-db_pull_remote_database_password: root
-db_pull_remote_database_port: 5432
-
-db_pull_local_database_user: postgres
-db_pull_local_database_host: localhost
-db_pull_local_database_name: postgres
-db_pull_local_database_password: root
-db_pull_local_database_port: 5432
-
-db_pull_database_type: postgres
-
-db_pull_skip_restore: false
-
-db_pull_exclude_table: []
-db_pull_exclude_table_data: []
-```
+`defaults` vars declared in this module can be found here: [defaults/main.yml](defaults/main.yml)
 
 Example Playbook
 ----------------
@@ -55,4 +38,4 @@ MIT
 Author Information
 ------------------
 
- * ansible-db-pull, written by Erwan Richard
+* ansible-db-pull, written by Erwan Richard

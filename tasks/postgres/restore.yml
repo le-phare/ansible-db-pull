@@ -2,7 +2,7 @@
   delegate_to: localhost
   become: false
   shell: >
-    PGPASSWORD="{{ db_pull_local_database_password }}" pg_restore \
+    PGPASSWORD="{{ db_pull_local_database_password }}" {{ db_pull_postgresql_pg_restore_binary_path }} \
       -U {{ db_pull_local_database_user }} \
       -h {{ db_pull_local_database_host }} \
       -p {{ db_pull_local_database_port }} \
