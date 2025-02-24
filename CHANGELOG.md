@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/le-phare/ansible-db-pull/compare/v1.2.1...v1.3.0) (2025-02-24)
+
+
+### Features
+
+* **postgresql:** allow binary paths overriding ([e7a6ea6](https://github.com/le-phare/ansible-db-pull/commit/e7a6ea66b0e791d5e08382af67236f4b414f5ca1))
+
 ## [1.2.1](https://github.com/le-phare/ansible-db-pull/compare/v1.2.0...v1.2.1) (2023-11-06)
 
 
