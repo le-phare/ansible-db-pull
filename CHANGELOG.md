@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/le-phare/ansible-db-pull/compare/v1.3.0...v1.4.0) (2025-03-28)
+
+
+### Features
+
+* anonymization using DbToolsBundle ([#4](https://github.com/le-phare/ansible-db-pull/issues/4)) ([b0bb627](https://github.com/le-phare/ansible-db-pull/commit/b0bb6275115f0964ccff88350233dab18d24615e))
+
 ## [1.3.0](https://github.com/le-phare/ansible-db-pull/compare/v1.2.1...v1.3.0) (2025-02-24)
 
 
