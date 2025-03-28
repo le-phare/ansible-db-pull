@@ -15,6 +15,21 @@
 - include_tasks: "{{ db_pull_database_type }}/dump.yml"
   when: local_dump.matched == 0
 
+- name: Replicate database to anonymization database
+  shell: >
+    PGPASSWORD="{{ db_pull_anonymization_remote_database_password }}" {{ db_pull_postgresql_pg_restore_binary_path }} \
+      -U {{ db_pull_anonymization_remote_database_user }} \
+      -h {{ db_pull_anonymization_remote_database_host }} \
+      -p {{ db_pull_anonymization_remote_database_port }} \
+      -d {{ db_pull_anonymization_remote_database_name }} \
+      --clean --if-exists --no-owner --no-acl \
+      {{ db_pull_remote_backup_path }}/{{ db_pull_remote_database_name }}-{{ ansible_date_time.iso8601 }}.dump
+  when: db_pull_anonymization
+
+- name: Anonymize using DbToolsBundle
+  shell: "{{ db_pull_anonymization_command }}"
+  when: db_pull_anonymization
+
 - name: Ensure database dump folder exists
   delegate_to: localhost
   become: false
