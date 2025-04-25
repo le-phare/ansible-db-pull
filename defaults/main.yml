@@ -24,6 +24,9 @@ db_pull_skip_restore: false
 db_pull_exclude_table: []
 db_pull_exclude_table_data: []
 
+db_pull_mysql_mysql_binary_path: mysql
+db_pull_mysql_mysqldump_binary_path: mysqldump
+
 db_pull_postgresql_createdb_binary_path: createdb
 db_pull_postgresql_dropdb_binary_path: dropdb
 db_pull_postgresql_pg_dump_binary_path: pg_dump
