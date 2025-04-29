@@ -2,7 +2,7 @@
   delegate_to: localhost
   become: false
   shell: >
-    mysql \
+    {{ db_pull_mysql_mysql_binary_path }} \
       -u {{ db_pull_local_database_user }} \
       --password={{ db_pull_local_database_password }} \
       -h {{ db_pull_local_database_host }} \

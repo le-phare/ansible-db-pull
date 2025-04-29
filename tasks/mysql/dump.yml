@@ -1,6 +1,6 @@
 - name: backup mysql db server
   shell: >
-    mysqldump \
+    {{ db_pull_mysql_mysqldump_binary_path }} \
       -u {{ db_pull_remote_database_user }} \
       --password={{ db_pull_remote_database_password }} \
       {{ ['--ignore-table']|product(db_pull_exclude_table)|map('join', ' ')|join(' ') }} \
