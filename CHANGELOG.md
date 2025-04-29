@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.1](https://github.com/le-phare/ansible-db-pull/compare/v1.4.0...v1.4.1) (2025-04-29)
+
+
+### Bug Fixes
+
+* **anonymization:** skip when restoring local dumps ([#10](https://github.com/le-phare/ansible-db-pull/issues/10)) ([f6b7d7e](https://github.com/le-phare/ansible-db-pull/commit/f6b7d7e50647934e427d633fc5a1a6acb9a67a77))
+
 ## [1.4.0](https://github.com/le-phare/ansible-db-pull/compare/v1.3.0...v1.4.0) (2025-03-28)
 
 
