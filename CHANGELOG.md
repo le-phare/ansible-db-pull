@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/le-phare/ansible-db-pull/compare/v1.4.1...v1.5.0) (2025-05-14)
+
+
+### Features
+
+* **mysql:** allow binary paths overriding ([58e78f1](https://github.com/le-phare/ansible-db-pull/commit/58e78f1e0e5020f1d6ad181d40912e0554e25680))
+
 ## [1.4.1](https://github.com/le-phare/ansible-db-pull/compare/v1.4.0...v1.4.1) (2025-04-29)
 
 
