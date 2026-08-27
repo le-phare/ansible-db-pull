@@ -7,5 +7,5 @@
       -d {{ db_pull_remote_database_name }} \
       {{ ['-T']|product(db_pull_exclude_table)|map('join', ' ')|join(' ') }} \
       {{ ['--exclude-table-data']|product(db_pull_exclude_table_data)|map('join', ' ')|join(' ') }} \
-      --no-owner \
+      {{ db_pull_postgresql_pg_dump_args }} {{ db_pull_postgresql_pg_dump_extra_args }} \
       -f {{ db_pull_remote_backup_path }}/{{ db_pull_remote_database_name }}-{{ ansible_date_time.iso8601 }}.dump

@@ -32,6 +32,9 @@ db_pull_postgresql_dropdb_binary_path: dropdb
 db_pull_postgresql_pg_dump_binary_path: pg_dump
 db_pull_postgresql_pg_restore_binary_path: pg_restore
 
+db_pull_postgresql_pg_dump_args: "--no-owner"
+db_pull_postgresql_pg_dump_extra_args: ""
+
 db_pull_anonymization: false
 
 db_pull_anonymization_remote_database_user: postgres
