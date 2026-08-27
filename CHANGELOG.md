@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/le-phare/ansible-db-pull/compare/v1.5.0...v1.6.0) (2026-08-27)
+
+
+### Features
+
+* **dump:** PostgreSQL: customizable args ([#14](https://github.com/le-phare/ansible-db-pull/issues/14)) ([2ed5076](https://github.com/le-phare/ansible-db-pull/commit/2ed50760cd1bf73d1f52febfb0d54cf686ceb642))
+
 ## [1.5.0](https://github.com/le-phare/ansible-db-pull/compare/v1.4.1...v1.5.0) (2025-05-14)
 
 
