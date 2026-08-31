@@ -1,0 +1,32 @@
+- name: Remove anonymization database
+  shell: >
+    {{ db_pull_mysql_mysql_binary_path }} \
+      -u {{ db_pull_anonymization_remote_database_user }} \
+      --password={{ db_pull_anonymization_remote_database_password }} \
+      -h {{ db_pull_anonymization_remote_database_host }} \
+      -P {{ db_pull_anonymization_remote_database_port }} \
+      -e "DROP DATABASE IF EXISTS \`{{ db_pull_anonymization_remote_database_name }}\`;"
+  when: not db_pull_anonymization_skip_remove
+
+- name: Recreate anonymization database
+  shell: >
+    {{ db_pull_mysql_mysql_binary_path }} \
+      -u {{ db_pull_anonymization_remote_database_user }} \
+      --password={{ db_pull_anonymization_remote_database_password }} \
+      -h {{ db_pull_anonymization_remote_database_host }} \
+      -P {{ db_pull_anonymization_remote_database_port }} \
+      -e "CREATE DATABASE IF NOT EXISTS \`{{ db_pull_anonymization_remote_database_name }}\` CHARACTER SET utf8 COLLATE utf8_general_ci;"
+  when: not db_pull_anonymization_skip_recreate
+
+- name: Replicate database to anonymization database
+  shell: >
+    {{ db_pull_mysql_mysql_binary_path }} \
+      -u {{ db_pull_anonymization_remote_database_user }} \
+      --password={{ db_pull_anonymization_remote_database_password }} \
+      -h {{ db_pull_anonymization_remote_database_host }} \
+      -P {{ db_pull_anonymization_remote_database_port }} \
+      {{ db_pull_anonymization_remote_database_name }} \
+      < {{ db_pull_remote_backup_path }}/{{ db_pull_remote_database_name }}-{{ ansible_date_time.iso8601 }}.dump
+
+- name: Anonymize using DbToolsBundle
+  shell: "{{ db_pull_anonymization_command }}"
