@@ -6,5 +6,6 @@
       -u {{ db_pull_local_database_user }} \
       --password={{ db_pull_local_database_password }} \
       -h {{ db_pull_local_database_host }} \
+      -P {{ db_pull_local_database_port }} \
       -e "DROP DATABASE IF EXISTS \`{{ db_pull_local_database_name }}\`;"
   when: not db_pull_skip_restore
