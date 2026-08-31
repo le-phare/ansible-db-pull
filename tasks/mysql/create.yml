@@ -6,4 +6,5 @@
       -u {{ db_pull_local_database_user }} \
       --password={{ db_pull_local_database_password }} \
       -h {{ db_pull_local_database_host }} \
+      -P {{ db_pull_local_database_port }} \
       -e "CREATE DATABASE IF NOT EXISTS \`{{ db_pull_local_database_name }}\` CHARACTER SET utf8 COLLATE utf8_general_ci;"
