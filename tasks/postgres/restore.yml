@@ -1,12 +1,15 @@
 - name: Restore postgres dump locally
   delegate_to: localhost
   become: false
-  shell: >
-    PGPASSWORD="{{ db_pull_local_database_password }}" {{ db_pull_postgresql_pg_restore_binary_path }} \
+  ansible.builtin.shell: >
+    {{ db_pull_postgresql_pg_restore_binary_path }} \
       -U {{ db_pull_local_database_user }} \
       -h {{ db_pull_local_database_host }} \
       -p {{ db_pull_local_database_port }} \
       -d {{ db_pull_local_database_name }} \
       --clean --if-exists --no-owner --no-acl \
       {{ db_pull_local_backup_path }}/{{ db_pull_remote_database_name }}.dump
+  environment:
+    PGPASSWORD: "{{ db_pull_local_database_password }}"
+  no_log: true
   when: not db_pull_skip_restore
