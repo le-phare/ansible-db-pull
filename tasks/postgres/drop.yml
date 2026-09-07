@@ -5,5 +5,6 @@
     PGPASSWORD="{{ db_pull_local_database_password }}" {{ db_pull_postgresql_dropdb_binary_path }} --if-exists \
       -U {{ db_pull_local_database_user }} \
       -h {{ db_pull_local_database_host }} \
+      -p {{ db_pull_local_database_port }} \
       {{ db_pull_local_database_name }}
   when: not db_pull_skip_restore
