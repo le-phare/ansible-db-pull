@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.1](https://github.com/le-phare/ansible-db-pull/compare/v1.6.0...v1.6.1) (2026-09-07)
+
+
+### Bug Fixes
+
+* add missing CLI port flags ([e270c02](https://github.com/le-phare/ansible-db-pull/commit/e270c02accb144952c972c780f292e928764ddc9))
+* **anonymization:** recreate anonymization database before cloning it from live database ([e088016](https://github.com/le-phare/ansible-db-pull/commit/e088016ab8d237b72f745f1589e647ff240f8b0e))
+* **anonymization:** recreate anonymization database before cloning it from live database ([42726e4](https://github.com/le-phare/ansible-db-pull/commit/42726e40d1cca0a35fa8674516d36023cae3dbbd))
+
 ## [1.6.0](https://github.com/le-phare/ansible-db-pull/compare/v1.5.0...v1.6.0) (2026-08-27)
 
 
