@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.2](https://github.com/le-phare/ansible-db-pull/compare/v1.6.1...v1.6.2) (2026-09-07)
+
+
+### Bug Fixes
+
+* **security:** avoid leaking the database password by using env instead of CLI args ([84bd2a3](https://github.com/le-phare/ansible-db-pull/commit/84bd2a3353b20b2041c92e2e1094b874012ff541))
+
 ## [1.6.1](https://github.com/le-phare/ansible-db-pull/compare/v1.6.0...v1.6.1) (2026-09-07)
 
 
