@@ -1,6 +1,6 @@
 - name: backup postgres db server
-  shell: >
-    PGPASSWORD="{{ db_pull_remote_database_password }}" {{ db_pull_postgresql_pg_dump_binary_path }} -Fc \
+  ansible.builtin.shell: >
+    {{ db_pull_postgresql_pg_dump_binary_path }} -Fc \
       -U {{ db_pull_remote_database_user }} \
       -h {{ db_pull_remote_database_host }} \
       -p {{ db_pull_remote_database_port }} \
@@ -9,3 +9,6 @@
       {{ ['--exclude-table-data']|product(db_pull_exclude_table_data)|map('join', ' ')|join(' ') }} \
       {{ db_pull_postgresql_pg_dump_args }} {{ db_pull_postgresql_pg_dump_extra_args }} \
       -f {{ db_pull_remote_backup_path }}/{{ db_pull_remote_database_name }}-{{ ansible_date_time.iso8601 }}.dump
+  environment:
+    PGPASSWORD: "{{ db_pull_remote_database_password }}"
+  no_log: true

@@ -1,11 +1,13 @@
 - name: Remove local mysql database
   delegate_to: localhost
   become: false
-  shell: >
+  ansible.builtin.shell: >
     {{ db_pull_mysql_mysql_binary_path }} \
       -u {{ db_pull_local_database_user }} \
-      --password={{ db_pull_local_database_password }} \
       -h {{ db_pull_local_database_host }} \
       -P {{ db_pull_local_database_port }} \
       -e "DROP DATABASE IF EXISTS \`{{ db_pull_local_database_name }}\`;"
+  environment:
+    MYSQL_PWD: "{{ db_pull_local_database_password }}"
+  no_log: true
   when: not db_pull_skip_restore
